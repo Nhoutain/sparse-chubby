@@ -1,0 +1,48 @@
+
+from streamparse.bolt import BatchingBolt
+import datetime
+from cassandra.cluster import Cluster
+
+
+
+class WriteBestBolt(BatchingBolt):
+
+    def initialize(self, conf, ctx):
+        self.client = SimpleClient()
+        self.mc = pylibmc.Client(["127.0.0.1"], binary=True,
+                            behaviors={"tcp_nodelay": True,
+                                       "ketama": True})
+
+    def group_key(self, tup):
+        return tup.values[0]
+
+    def process_batch(self, key, tups):
+        minute = datetime.datetime.strptime(getattr(tups[0], 'values')[2],
+                                            "%Y-%m-%dT%H:%M:%S.%fZ" )
+        val = sum([ getattr(v, 'values')[1] for v in tups ])
+
+        self.client.addBest(minute.strftime("%Y-%m-%dT%H:%M:00.000Z"), key, val)
+
+
+class SimpleClient(object):
+    session = None
+
+    def connect(self, nodes):
+        cluster = Cluster(nodes)
+        self.session = cluster.connect()
+
+    def getHash(self, time, tags):
+        query = "SELECT * FROM twitter.HashtagCounter WHERE minute='"'%s'"' AND " \
+            "  hashtag IN %s;" % (time, tags)
+        return self.session.execute(query)
+
+
+    def addBest(self, minute, tag, value):
+        query = "INSERT INTO twitter.BestHashtag(value, minute, hashtag)"\
+                "VALUES (%d,'"'%s'"', '"'%s'"');" % (value, minute, tag)
+
+        self.session.execute(query)
+
+    def close(self):
+        self.session.cluster.shutdown()
+

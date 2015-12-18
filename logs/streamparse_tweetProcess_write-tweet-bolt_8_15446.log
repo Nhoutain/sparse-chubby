@@ -1,0 +1,31 @@
+2015-12-17 20:26:40,332 - cassandra.pool - DEBUG - Host 127.0.0.1 is now marked up
+2015-12-17 20:26:40,333 - cassandra.cluster - DEBUG - [control connection] Opening new connection to 127.0.0.1
+2015-12-17 20:26:40,333 - cassandra.connection - DEBUG - Not sending options message for new connection(139676839911760) to 127.0.0.1 because compression is disabled and a cql version was not specified
+2015-12-17 20:26:40,340 - cassandra.io.asyncorereactor - DEBUG - Starting asyncore event loop
+2015-12-17 20:26:40,341 - cassandra.connection - DEBUG - Got ReadyMessage on new connection (139676839911760) from 127.0.0.1
+2015-12-17 20:26:40,344 - cassandra.cluster - DEBUG - [control connection] Established new connection <AsyncoreConnection(139676839911760) 127.0.0.1:9042>, registering watchers and refreshing schema and topology
+2015-12-17 20:26:40,356 - cassandra.cluster - DEBUG - [control connection] Refreshing node list and token map using preloaded results
+2015-12-17 20:26:40,356 - cassandra.cluster - DEBUG - [control connection] Finished fetching ring info
+2015-12-17 20:26:40,356 - cassandra.cluster - DEBUG - [control connection] Attempting to use preloaded results for schema agreement
+2015-12-17 20:26:40,357 - cassandra.cluster - DEBUG - [control connection] Schemas match
+2015-12-17 20:26:40,391 - cassandra.cluster - DEBUG - [control connection] Fetched schema, rebuilding metadata
+2015-12-17 20:26:40,400 - cassandra.cluster - DEBUG - Control connection created
+2015-12-17 20:26:40,400 - cassandra.pool - DEBUG - Initializing new connection pool for host 127.0.0.1
+2015-12-17 20:26:40,402 - cassandra.connection - DEBUG - Not sending options message for new connection(139676831266768) to 127.0.0.1 because compression is disabled and a cql version was not specified
+2015-12-17 20:26:40,405 - cassandra.connection - DEBUG - Got ReadyMessage on new connection (139676831266768) from 127.0.0.1
+2015-12-17 20:26:40,406 - cassandra.connection - DEBUG - Not sending options message for new connection(139676831267344) to 127.0.0.1 because compression is disabled and a cql version was not specified
+2015-12-17 20:26:40,409 - cassandra.connection - DEBUG - Got ReadyMessage on new connection (139676831267344) from 127.0.0.1
+2015-12-17 20:26:40,410 - cassandra.pool - DEBUG - Finished initializing new connection pool for host 127.0.0.1
+2015-12-17 20:26:40,411 - cassandra.cluster - DEBUG - Added pool for host 127.0.0.1 to session
+2015-12-17 20:26:47,941 - cassandra.io.asyncorereactor - DEBUG - Waiting for event loop thread to join...
+2015-12-17 20:26:48,116 - cassandra.io.asyncorereactor - DEBUG - Asyncore event loop ended
+2015-12-17 20:26:48,163 - cassandra.io.asyncorereactor - DEBUG - Event loop thread was joined
+2015-12-17 20:26:48,164 - cassandra.cluster - DEBUG - Shutting down Cluster Scheduler
+2015-12-17 20:26:48,164 - cassandra.cluster - DEBUG - Shutting down control connection
+2015-12-17 20:26:48,164 - cassandra.cluster - DEBUG - Not executing scheduled task due to Scheduler shutdown
+2015-12-17 20:26:48,164 - cassandra.io.asyncorereactor - DEBUG - Closing connection (139676839911760) to 127.0.0.1
+2015-12-17 20:26:48,165 - cassandra.io.asyncorereactor - DEBUG - Closed socket to 127.0.0.1
+2015-12-17 20:26:48,165 - cassandra.io.asyncorereactor - DEBUG - Closing connection (139676831266768) to 127.0.0.1
+2015-12-17 20:26:48,166 - cassandra.io.asyncorereactor - DEBUG - Closed socket to 127.0.0.1
+2015-12-17 20:26:48,166 - cassandra.io.asyncorereactor - DEBUG - Closing connection (139676831267344) to 127.0.0.1
+2015-12-17 20:26:48,166 - cassandra.io.asyncorereactor - DEBUG - Closed socket to 127.0.0.1

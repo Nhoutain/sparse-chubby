@@ -1,0 +1,4 @@
+streamparse
+pytz
+cassandra-driver
+simplejson

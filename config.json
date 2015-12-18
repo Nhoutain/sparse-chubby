@@ -1,0 +1,23 @@
+{
+    "library": "",
+    "topology_specs": "topologies/",
+    "virtualenv_specs": "virtualenvs/",
+    "envs": {
+        "ribbit": {
+            "user": "ubuntu",
+            "nimbus": "54.200.152.156",
+            "workers": [
+                "54.200.152.156"
+            ],
+            "log": {
+                "path": "",
+                "max_bytes": 1000000,
+                "backup_count": 10,
+                "level": "info"
+            },
+            "use_ssh_for_nimbus": true,
+            "use_virtualenv":true,
+            "virtualenv_root":"/home/ubuntu/virtualenvs"
+        }
+    }
+}
